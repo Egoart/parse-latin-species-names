@@ -86,7 +86,6 @@ def clear_result(data: list) -> set:
             cleared.append(s)
     # remove duplicate names
     cleared_set = sorted(set(cleared))
-    print(cleared_set)
     return cleared_set
 
 
@@ -107,7 +106,7 @@ def result_to_file(names: set, filename: str):
         output_doc.add_paragraph(name)
 
     output_doc.save(output_file_path)
-    print(f"\n List of species is saved to {output_file_path}")
+    print(f"List of species is saved to {output_file_path}")
 
 
 def process(filename: str):
@@ -123,7 +122,7 @@ def process(filename: str):
             if ascii_str[0].isupper() or ascii_str[0].startswith("("):
                 comb_names.append(ascii_str[0])
             del ascii_str[0]
-        print(sorted(comb_names))
+
         print("Task completed.")
 
     resulted = clear_result(comb_names)
